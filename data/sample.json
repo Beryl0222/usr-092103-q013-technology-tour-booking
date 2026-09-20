@@ -1,0 +1,9 @@
+{
+  "event_id": "092103-013-sample-001",
+  "event_type": "ELIGIBILITY_ASSERTED",
+  "aggregate_type": "experience_product",
+  "aggregate_id": "technology_tour_booking-001",
+  "occurred_at": "2026-09-20T16:00:00+08:00",
+  "version": 1,
+  "summary": "科技体验预约保障联调样例"
+}

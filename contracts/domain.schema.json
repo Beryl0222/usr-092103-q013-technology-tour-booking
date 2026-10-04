@@ -1,56 +1,106 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "科技体验预约保障领域事件",
+  "description": "跨供应商交换的统一事件信封。所有外部通知先入通知网关，按来源版本(source_version)与发生时间(occurred_at)定序后再驱动本表中的事件。",
   "type": "object",
-  "required": [
-    "event_id",
-    "event_type",
-    "aggregate_type",
-    "aggregate_id",
-    "occurred_at",
-    "version",
-    "summary"
-  ],
+  "required": ["event_id", "event_type", "aggregate_type", "aggregate_id", "occurred_at", "version", "summary"],
   "properties": {
-    "event_id": {
-      "type": "string",
-      "minLength": 1
+    "event_id": { "type": "string", "minLength": 1 },
+    "event_type": { "$ref": "#/$defs/event_type" },
+    "aggregate_type": { "$ref": "#/$defs/aggregate_type" },
+    "aggregate_id": { "type": "string", "minLength": 1 },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "version": { "type": "integer", "minimum": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "correlation_id": { "type": "string" },
+    "causation_id": { "type": "string" },
+    "source": {
+      "type": "object",
+      "description": "事件的外部来源。供应商通知必须携带 notification_id 与 source_version，供去重与新旧版本判定。",
+      "properties": {
+        "system": { "type": "string", "minLength": 1 },
+        "supplier_id": { "type": "string" },
+        "notification_id": { "type": "string" },
+        "source_version": { "type": "integer", "minimum": 1 },
+        "received_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["system"]
     },
+    "payload": { "type": "object" }
+  },
+  "additionalProperties": false,
+  "$defs": {
     "event_type": {
       "type": "string",
       "enum": [
+        "EXPERIENCE_PUBLISHED",
+        "INVENTORY_UPDATED",
+        "EQUIPMENT_STATUS_ANNOUNCED",
+        "NOTIFICATION_RECORDED",
         "ELIGIBILITY_ASSERTED",
+        "BUNDLE_REQUESTED",
+        "ITEM_REQUESTED",
+        "SUPPLIER_CONFIRMED",
+        "SUPPLIER_REJECTED",
+        "SUPPLIER_TIMEOUT",
+        "ITEM_CANCELLED",
+        "ITEM_INTERRUPTED",
+        "ITEM_REPLACED",
         "BUNDLE_CONFIRMED",
+        "BUNDLE_CANCELLED",
+        "PAYMENT_AUTHORIZED",
+        "PAYMENT_CAPTURED",
+        "REFUND_ALLOCATED",
         "CHECKIN_RECORDED",
+        "ADMISSION_DENIED",
         "SERVICE_INTERRUPTED",
-        "REFUND_ALLOCATED"
+        "INCIDENT_ESCALATED",
+        "INCIDENT_RESOLVED",
+        "REPLACEMENT_OFFERED",
+        "REPLACEMENT_ACCEPTED",
+        "REPLACEMENT_DECLINED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
         "experience_product",
+        "experience_slot",
+        "supplier_notification",
         "eligibility_assertion",
         "booking_bundle",
-        "service_incident"
+        "booking_item",
+        "payment",
+        "service_incident",
+        "refund"
       ]
     },
-    "aggregate_id": {
-      "type": "string",
-      "minLength": 1
+    "money": {
+      "type": "object",
+      "required": ["amount", "currency"],
+      "properties": {
+        "amount": { "type": "integer", "minimum": 0, "description": "最小货币单位的非负整数" },
+        "currency": { "type": "string", "enum": ["CNY"] }
+      }
     },
-    "occurred_at": {
-      "type": "string",
-      "format": "date-time"
+    "slot_ref": {
+      "type": "object",
+      "required": ["product_id", "slot_id"],
+      "properties": {
+        "product_id": { "type": "string" },
+        "slot_id": { "type": "string" }
+      }
     },
-    "version": {
-      "type": "integer",
-      "minimum": 1
-    },
-    "summary": {
-      "type": "string",
-      "minLength": 1
+    "consent": {
+      "type": "object",
+      "description": "游客明确同意的证据；替换方案必须按报价版本重新获取。",
+      "required": ["actor", "channel", "acted_at", "quote_version"],
+      "properties": {
+        "actor": { "type": "string" },
+        "channel": { "type": "string", "enum": ["app", "sms", "counter", "phone"] },
+        "acted_at": { "type": "string", "format": "date-time" },
+        "quote_version": { "type": "string" }
+      }
     }
-  },
-  "additionalProperties": true
+  }
 }

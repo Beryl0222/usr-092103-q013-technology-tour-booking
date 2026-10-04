@@ -5,6 +5,7 @@
   "type": "module",
   "description": "领域事件基础校验",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "build:sample": "node scripts/build-flow-sample.mjs"
   }
 }

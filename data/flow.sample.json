@@ -1,0 +1,451 @@
+{
+  "scenario": "无人车临时停运，平台开事故并取得游客对替换报价的重新同意",
+  "generated_for": "2026-10-10 科技体验日",
+  "event_count": 23,
+  "events": [
+    {
+      "event_type": "EXPERIENCE_PUBLISHED",
+      "aggregate_type": "experience_product",
+      "aggregate_id": "auto-shuttle",
+      "version": 1,
+      "summary": "发布体验 无人驾驶接驳车体验（SUP-AUTO）报价版本 AS-2026-10-v1",
+      "source_notification": null,
+      "payload_keys": [
+        "product_id",
+        "supplier_id",
+        "title",
+        "quote_version",
+        "location",
+        "price",
+        "slots",
+        "eligibility_rules",
+        "safety_notice",
+        "languages",
+        "contract"
+      ]
+    },
+    {
+      "event_type": "EXPERIENCE_PUBLISHED",
+      "aggregate_type": "experience_product",
+      "aggregate_id": "drone-pickup",
+      "version": 1,
+      "summary": "发布体验 无人机取餐演示（SUP-DRONE）报价版本 DP-2026-10-v1",
+      "source_notification": null,
+      "payload_keys": [
+        "product_id",
+        "supplier_id",
+        "title",
+        "quote_version",
+        "location",
+        "price",
+        "slots",
+        "eligibility_rules",
+        "safety_notice",
+        "languages",
+        "contract"
+      ]
+    },
+    {
+      "event_type": "EXPERIENCE_PUBLISHED",
+      "aggregate_type": "experience_product",
+      "aggregate_id": "robot-store",
+      "version": 1,
+      "summary": "发布体验 机器人门店互动（SUP-ROBOT）报价版本 RS-2026-10-v1",
+      "source_notification": null,
+      "payload_keys": [
+        "product_id",
+        "supplier_id",
+        "title",
+        "quote_version",
+        "location",
+        "price",
+        "slots",
+        "eligibility_rules",
+        "safety_notice",
+        "languages",
+        "contract"
+      ]
+    },
+    {
+      "event_type": "EXPERIENCE_PUBLISHED",
+      "aggregate_type": "experience_product",
+      "aggregate_id": "smart-factory",
+      "version": 1,
+      "summary": "发布体验 智能工厂参访（SUP-FACTORY）报价版本 SF-2026-10-v1",
+      "source_notification": null,
+      "payload_keys": [
+        "product_id",
+        "supplier_id",
+        "title",
+        "quote_version",
+        "location",
+        "price",
+        "slots",
+        "eligibility_rules",
+        "safety_notice",
+        "languages",
+        "contract"
+      ]
+    },
+    {
+      "event_type": "ELIGIBILITY_ASSERTED",
+      "aggregate_type": "eligibility_assertion",
+      "aggregate_id": "tourist-lin",
+      "version": 1,
+      "summary": "游客 tourist-lin 的身份断言已更新（7 项，仅必要断言）",
+      "source_notification": null,
+      "payload_keys": [
+        "tourist_id",
+        "scope",
+        "assertions"
+      ]
+    },
+    {
+      "event_type": "ELIGIBILITY_ASSERTED",
+      "aggregate_type": "eligibility_assertion",
+      "aggregate_id": "tourist-kid",
+      "version": 1,
+      "summary": "游客 tourist-kid 的身份断言已更新（6 项，仅必要断言）",
+      "source_notification": null,
+      "payload_keys": [
+        "tourist_id",
+        "scope",
+        "assertions"
+      ]
+    },
+    {
+      "event_type": "ELIGIBILITY_ASSERTED",
+      "aggregate_type": "eligibility_assertion",
+      "aggregate_id": "tourist-tanaka",
+      "version": 1,
+      "summary": "游客 tourist-tanaka 的身份断言已更新（5 项，仅必要断言）",
+      "source_notification": null,
+      "payload_keys": [
+        "tourist_id",
+        "scope",
+        "assertions"
+      ]
+    },
+    {
+      "event_type": "BUNDLE_REQUESTED",
+      "aggregate_type": "booking_bundle",
+      "aggregate_id": "bundle_mutaz21r_8",
+      "version": 1,
+      "summary": "游客 tourist-lin 请求组合行程 bundle_mutaz21r_8",
+      "source_notification": null,
+      "payload_keys": [
+        "bundle_id",
+        "tourist_id",
+        "items",
+        "total",
+        "transport",
+        "idempotency_key"
+      ]
+    },
+    {
+      "event_type": "ITEM_REQUESTED",
+      "aggregate_type": "booking_item",
+      "aggregate_id": "bundle_mutaz21r_8/line-auto",
+      "version": 1,
+      "summary": "向 SUP-AUTO 请求确认 line-auto",
+      "source_notification": null,
+      "payload_keys": [
+        "bundle_id",
+        "item_id",
+        "product_id",
+        "slot_id",
+        "supplier_id",
+        "price",
+        "state"
+      ]
+    },
+    {
+      "event_type": "NOTIFICATION_RECORDED",
+      "aggregate_type": "supplier_notification",
+      "aggregate_id": "AUTO-CONFIRM-77",
+      "version": 1,
+      "summary": "SUP-AUTO 通知 AUTO-CONFIRM-77 判定为 APPLIED",
+      "source_notification": "AUTO-CONFIRM-77",
+      "payload_keys": [
+        "supplier_id",
+        "notification_id",
+        "source_version",
+        "stream",
+        "kind",
+        "occurred_at",
+        "disposition",
+        "gap_from"
+      ]
+    },
+    {
+      "event_type": "SUPPLIER_CONFIRMED",
+      "aggregate_type": "booking_item",
+      "aggregate_id": "bundle_mutaz21r_8/line-auto",
+      "version": 2,
+      "summary": "供应商 SUP-AUTO 确认 line-auto",
+      "source_notification": null,
+      "payload_keys": [
+        "bundle_id",
+        "item_id",
+        "supplier_id",
+        "state"
+      ]
+    },
+    {
+      "event_type": "BUNDLE_CONFIRMED",
+      "aggregate_type": "booking_bundle",
+      "aggregate_id": "bundle_mutaz21r_8",
+      "version": 2,
+      "summary": "组合行程 bundle_mutaz21r_8 全部供应商已确认",
+      "source_notification": null,
+      "payload_keys": [
+        "bundle_id",
+        "item_ids",
+        "total"
+      ]
+    },
+    {
+      "event_type": "PAYMENT_AUTHORIZED",
+      "aggregate_type": "payment",
+      "aggregate_id": "bundle_mutaz21r_8",
+      "version": 1,
+      "summary": "行程 bundle_mutaz21r_8 授权冻结 120 元",
+      "source_notification": null,
+      "payload_keys": [
+        "bundle_id",
+        "payment_id",
+        "amount",
+        "authorization_id",
+        "idempotency_key"
+      ]
+    },
+    {
+      "event_type": "NOTIFICATION_RECORDED",
+      "aggregate_type": "supplier_notification",
+      "aggregate_id": "AUTO-EQ-20261010-03",
+      "version": 1,
+      "summary": "SUP-AUTO 通知 AUTO-EQ-20261010-03 判定为 APPLIED",
+      "source_notification": "AUTO-EQ-20261010-03",
+      "payload_keys": [
+        "supplier_id",
+        "notification_id",
+        "source_version",
+        "stream",
+        "kind",
+        "occurred_at",
+        "disposition",
+        "gap_from"
+      ]
+    },
+    {
+      "event_type": "EQUIPMENT_STATUS_ANNOUNCED",
+      "aggregate_type": "experience_slot",
+      "aggregate_id": "auto-shuttle/AM-0900",
+      "version": 1,
+      "summary": "auto-shuttle/AM-0900 设备状态 OUTAGE（EQUIPMENT_FAULT）",
+      "source_notification": "AUTO-EQ-20261010-03",
+      "payload_keys": [
+        "scope",
+        "status",
+        "reason_category",
+        "reason_detail",
+        "effective_from",
+        "effective_to"
+      ]
+    },
+    {
+      "event_type": "SERVICE_INTERRUPTED",
+      "aggregate_type": "service_incident",
+      "aggregate_id": "inc_mutaz21s_h",
+      "version": 1,
+      "summary": "事故 inc_mutaz21s_h：EQUIPMENT_OUTAGE，影响 1 个行程行",
+      "source_notification": null,
+      "payload_keys": [
+        "incident_id",
+        "items",
+        "reason_category",
+        "reason_detail",
+        "severity",
+        "linked_event_id",
+        "opened_at",
+        "status"
+      ]
+    },
+    {
+      "event_type": "ITEM_INTERRUPTED",
+      "aggregate_type": "booking_item",
+      "aggregate_id": "bundle_mutaz21r_8/line-auto",
+      "version": 3,
+      "summary": "line-auto 状态转为 INTERRUPTED",
+      "source_notification": null,
+      "payload_keys": [
+        "bundle_id",
+        "item_id",
+        "incident_id",
+        "reason",
+        "state"
+      ]
+    },
+    {
+      "event_type": "INCIDENT_ESCALATED",
+      "aggregate_type": "service_incident",
+      "aggregate_id": "inc_mutaz21s_h",
+      "version": 2,
+      "summary": "事故 inc_mutaz21s_h 升级至 L1_SUPPLIER",
+      "source_notification": null,
+      "payload_keys": [
+        "incident_id",
+        "level",
+        "to_role",
+        "note",
+        "due_at"
+      ]
+    },
+    {
+      "event_type": "REPLACEMENT_OFFERED",
+      "aggregate_type": "service_incident",
+      "aggregate_id": "inc_mutaz21s_h",
+      "version": 3,
+      "summary": "事故 inc_mutaz21s_h 对 line-auto 给出替换报价 Q-inc_mutaz21s_h-1",
+      "source_notification": null,
+      "payload_keys": [
+        "incident_id",
+        "bundle_id",
+        "item_id",
+        "quote",
+        "quote_version",
+        "expires_at"
+      ]
+    },
+    {
+      "event_type": "REPLACEMENT_ACCEPTED",
+      "aggregate_type": "service_incident",
+      "aggregate_id": "inc_mutaz21s_h",
+      "version": 4,
+      "summary": "游客接受替换 Q-inc_mutaz21s_h-1",
+      "source_notification": null,
+      "payload_keys": [
+        "incident_id",
+        "bundle_id",
+        "item_id",
+        "quote_version",
+        "consent",
+        "quote"
+      ]
+    },
+    {
+      "event_type": "ITEM_REPLACED",
+      "aggregate_type": "booking_item",
+      "aggregate_id": "bundle_mutaz21r_8/line-auto",
+      "version": 4,
+      "summary": "line-auto 状态转为 REPLACED",
+      "source_notification": null,
+      "payload_keys": [
+        "bundle_id",
+        "item_id",
+        "incident_id",
+        "reason",
+        "state",
+        "quote_version"
+      ]
+    },
+    {
+      "event_type": "REFUND_ALLOCATED",
+      "aggregate_type": "payment",
+      "aggregate_id": "bundle_mutaz21r_8",
+      "version": 2,
+      "summary": "行 line-auto 退款 0 元，责任方 SUP-AUTO（合同 AS-TERMS-2026 条款 supplier_outage_replacement（退款比例 0））",
+      "source_notification": null,
+      "payload_keys": [
+        "bundle_id",
+        "refund_id",
+        "item_id",
+        "amount",
+        "responsible_party",
+        "basis",
+        "status"
+      ]
+    },
+    {
+      "event_type": "INCIDENT_RESOLVED",
+      "aggregate_type": "service_incident",
+      "aggregate_id": "inc_mutaz21s_h",
+      "version": 5,
+      "summary": "事故 inc_mutaz21s_h 解决：REPLACED_WITH_CONSENT",
+      "source_notification": null,
+      "payload_keys": [
+        "incident_id",
+        "outcome",
+        "status"
+      ]
+    }
+  ],
+  "tourist_view": {
+    "bundle_id": "bundle_mutaz21r_8",
+    "status": "全部已确认",
+    "transport": {},
+    "items": [
+      {
+        "item_id": "line-auto",
+        "product_id": "auto-shuttle",
+        "title": "无人驾驶接驳车体验",
+        "confirmation_status": "已按同意的替换方案改约",
+        "restrictions": {
+          "real_name_required": true,
+          "age": [
+            "年满14周岁"
+          ],
+          "adult_accompaniment": [],
+          "on_site_languages": [
+            "zh",
+            "en"
+          ],
+          "safety_notice": {
+            "version": "AS-SAFE-3",
+            "text": "全程系好安全带，勿触碰车辆控制面板；紧急情况下听从远程安全员广播。"
+          },
+          "equipment": {
+            "status": "正常"
+          }
+        },
+        "money": {
+          "price": {
+            "amount": 12000,
+            "currency": "CNY"
+          },
+          "captured": {
+            "amount": 0,
+            "currency": "CNY"
+          },
+          "refunded": {
+            "amount": 0,
+            "currency": "CNY"
+          }
+        },
+        "incidents": [
+          {
+            "incident_id": "inc_mutaz21s_h",
+            "reason_category": "EQUIPMENT_OUTAGE",
+            "status": "RESOLVED",
+            "open_offer": null,
+            "decision": "ACCEPTED"
+          }
+        ]
+      }
+    ],
+    "payment": {
+      "authorized": {
+        "amount": 12000,
+        "currency": "CNY"
+      },
+      "captured_total": {
+        "amount": 0,
+        "currency": "CNY"
+      },
+      "refunded_total": {
+        "amount": 0,
+        "currency": "CNY"
+      }
+    }
+  }
+}

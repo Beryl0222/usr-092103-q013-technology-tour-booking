@@ -1,0 +1,144 @@
+{
+  "$comment": "四个科技体验项目的目录种子。价格单位为分；合同条款用于部分履约退款分摊。",
+  "products": [
+    {
+      "product_id": "auto-shuttle",
+      "supplier_id": "SUP-AUTO",
+      "title": "无人驾驶接驳车体验",
+      "quote_version": "AS-2026-10-v1",
+      "location": "未来交通公园 A 区",
+      "price": { "amount": 12000, "currency": "CNY" },
+      "slots": [
+        { "slot_id": "AM-0900", "start_at": "2026-10-10T09:00:00+08:00", "end_at": "2026-10-10T10:00:00+08:00", "capacity": 8, "available_seats": 6 },
+        { "slot_id": "PM-1400", "start_at": "2026-10-10T14:00:00+08:00", "end_at": "2026-10-10T15:00:00+08:00", "capacity": 8, "available_seats": 6 }
+      ],
+      "eligibility_rules": [
+        { "rule_id": "AS-RN", "type": "real_name_required" },
+        { "rule_id": "AS-AGE", "type": "min_age", "min_age": 14 },
+        { "rule_id": "AS-LANG", "type": "language_required", "languages": ["zh", "en"], "min_level": "usable" }
+      ],
+      "safety_notice": { "version": "AS-SAFE-3", "text": "全程系好安全带，勿触碰车辆控制面板；紧急情况下听从远程安全员广播。" },
+      "languages": ["zh", "en"],
+      "contract": {
+        "terms_id": "AS-TERMS-2026",
+        "clauses": {
+          "supplier_outage_cancel": { "refund_ratio": 1, "responsible_party": "SUP-AUTO" },
+          "supplier_outage_replacement": { "refund_ratio": 0, "responsible_party": "SUP-AUTO" },
+          "partial_performance": { "refund_ratio": 0.5, "responsible_party": "SUP-AUTO" }
+        }
+      }
+    },
+    {
+      "product_id": "drone-pickup",
+      "supplier_id": "SUP-DRONE",
+      "title": "无人机取餐演示",
+      "quote_version": "DP-2026-10-v1",
+      "location": "湖滨起降点",
+      "price": { "amount": 8800, "currency": "CNY" },
+      "slots": [
+        { "slot_id": "AM-1100", "start_at": "2026-10-10T11:00:00+08:00", "end_at": "2026-10-10T11:40:00+08:00", "capacity": 12, "available_seats": 10 },
+        { "slot_id": "PM-1230", "start_at": "2026-10-10T12:30:00+08:00", "end_at": "2026-10-10T13:10:00+08:00", "capacity": 12, "available_seats": 10 }
+      ],
+      "eligibility_rules": [
+        { "rule_id": "DP-RN", "type": "real_name_required" },
+        { "rule_id": "DP-AGE", "type": "min_age", "min_age": 12 },
+        { "rule_id": "DP-LANG", "type": "language_required", "languages": ["zh", "en", "ja"], "min_level": "usable" }
+      ],
+      "safety_notice": { "version": "DP-SAFE-2", "text": "起降区请勿撑伞或举杆，接餐听从地勤手势。" },
+      "languages": ["zh", "en", "ja"],
+      "contract": {
+        "terms_id": "DP-TERMS-2026",
+        "clauses": {
+          "supplier_outage_cancel": { "refund_ratio": 1, "responsible_party": "SUP-DRONE" },
+          "supplier_outage_replacement": { "refund_ratio": 0, "responsible_party": "SUP-DRONE" },
+          "partial_performance": { "refund_ratio": 0.5, "responsible_party": "SUP-DRONE" }
+        }
+      }
+    },
+    {
+      "product_id": "robot-store",
+      "supplier_id": "SUP-ROBOT",
+      "title": "机器人门店互动",
+      "quote_version": "RS-2026-10-v1",
+      "location": "智能商业街区",
+      "price": { "amount": 6600, "currency": "CNY" },
+      "slots": [
+        { "slot_id": "PM-1600", "start_at": "2026-10-10T16:00:00+08:00", "end_at": "2026-10-10T17:00:00+08:00", "capacity": 20, "available_seats": 0 }
+      ],
+      "eligibility_rules": [
+        { "rule_id": "RS-RN", "type": "real_name_required" },
+        { "rule_id": "RS-ADULT", "type": "adult_accompaniment_required", "adult_required_under": 14 }
+      ],
+      "safety_notice": { "version": "RS-SAFE-1", "text": "请勿阻挡机器人行进路径，互动前听从店员讲解。" },
+      "languages": ["zh", "en", "ja", "ko"],
+      "contract": {
+        "terms_id": "RS-TERMS-2026",
+        "clauses": {
+          "supplier_outage_cancel": { "refund_ratio": 1, "responsible_party": "SUP-ROBOT" },
+          "supplier_outage_replacement": { "refund_ratio": 0, "responsible_party": "SUP-ROBOT" },
+          "partial_performance": { "refund_ratio": 0.5, "responsible_party": "SUP-ROBOT" }
+        }
+      }
+    },
+    {
+      "product_id": "smart-factory",
+      "supplier_id": "SUP-FACTORY",
+      "title": "智能工厂参访",
+      "quote_version": "SF-2026-10-v1",
+      "location": "智造基地",
+      "price": { "amount": 15000, "currency": "CNY" },
+      "slots": [
+        { "slot_id": "AM-1000", "start_at": "2026-10-10T10:00:00+08:00", "end_at": "2026-10-10T12:00:00+08:00", "capacity": 15, "available_seats": 9 }
+      ],
+      "eligibility_rules": [
+        { "rule_id": "SF-RN", "type": "real_name_required" },
+        { "rule_id": "SF-AGE", "type": "min_age", "min_age": 16 },
+        { "rule_id": "SF-DOC", "type": "document_validity_required" },
+        { "rule_id": "SF-LANG", "type": "language_required", "languages": ["zh"], "min_level": "usable" },
+        { "rule_id": "SF-SAFE", "type": "safety_ack_required" }
+      ],
+      "safety_notice": { "version": "SF-SAFE-5", "acknowledgement_required": true, "text": "须穿戴防静电服，禁止越过黄色警戒线，机器人工位禁止拍照闪光。" },
+      "languages": ["zh"],
+      "contract": {
+        "terms_id": "SF-TERMS-2026",
+        "clauses": {
+          "supplier_outage_cancel": { "refund_ratio": 1, "responsible_party": "SUP-FACTORY" },
+          "supplier_outage_replacement": { "refund_ratio": 0, "responsible_party": "SUP-FACTORY" },
+          "partial_performance": { "refund_ratio": 0.5, "responsible_party": "SUP-FACTORY" }
+        }
+      }
+    }
+  ],
+  "$profiles_comment": "游客原始档案只在入口出现，转换为断言后绝不进入事件流。",
+  "profiles": {
+    "tourist-lin": {
+      "tourist_id": "tourist-lin",
+      "real_name_verified": true,
+      "document_kind": "passport",
+      "date_of_birth": "2008-05-01",
+      "document_expiry_date": "2030-01-01",
+      "languages": [{ "code": "zh", "level": "native" }, { "code": "en", "level": "conversational" }],
+      "accompanied_by_adult": false,
+      "evidence_ref": "vault://identity/tourist-lin"
+    },
+    "tourist-kid": {
+      "tourist_id": "tourist-kid",
+      "real_name_verified": true,
+      "document_kind": "id_card",
+      "date_of_birth": "2016-03-01",
+      "document_expiry_date": "2030-01-01",
+      "languages": [{ "code": "zh", "level": "native" }],
+      "accompanied_by_adult": true,
+      "evidence_ref": "vault://identity/tourist-kid"
+    },
+    "tourist-tanaka": {
+      "tourist_id": "tourist-tanaka",
+      "real_name_verified": true,
+      "document_kind": "passport",
+      "date_of_birth": "1995-09-01",
+      "document_expiry_date": "2025-01-01",
+      "languages": [{ "code": "ja", "level": "native" }],
+      "evidence_ref": "vault://identity/tourist-tanaka"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+// 领域错误：携带稳定 code，供调用方与测试按语义分支，而非匹配中文文案。
+export class DomainError extends Error {
+  constructor(code, message, details = {}) {
+    super(message);
+    this.name = "DomainError";
+    this.code = code;
+    this.details = details;
+  }
+}
+
+export const fail = (code, message, details) => {
+  throw new DomainError(code, message, details);
+};
+
+export const ErrorCodes = Object.freeze({
+  VALIDATION: "VALIDATION_FAILED",
+  DUPLICATE_EVENT: "DUPLICATE_EVENT",
+  CONCURRENCY: "AGGREGATE_VERSION_CONFLICT",
+  DUPLICATE_NOTIFICATION: "DUPLICATE_NOTIFICATION",
+  STALE_NOTIFICATION: "STALE_NOTIFICATION",
+  UNKNOWN_PRODUCT: "UNKNOWN_PRODUCT",
+  UNKNOWN_BUNDLE: "UNKNOWN_BUNDLE",
+  UNKNOWN_ITEM: "UNKNOWN_ITEM",
+  UNKNOWN_INCIDENT: "UNKNOWN_INCIDENT",
+  ELIGIBILITY: "ELIGIBILITY_NOT_MET",
+  TRANSPORT_BUFFER: "TRANSPORT_BUFFER_TOO_SHORT",
+  INVENTORY: "INVENTORY_UNAVAILABLE",
+  EQUIPMENT_DOWN: "EQUIPMENT_OUT_OF_SERVICE",
+  ILLEGAL_STATE: "ILLEGAL_ITEM_STATE",
+  QUOTE_MISMATCH: "QUOTE_VERSION_MISMATCH",
+  CONSENT_REQUIRED: "CONSENT_REQUIRED",
+  LANGUAGE_UNSUPPORTED: "LANGUAGE_UNSUPPORTED",
+  PAYMENT_STATE: "PAYMENT_STATE_CONFLICT",
+  INVALID_PAYLOAD: "INVALID_PAYLOAD",
+});
